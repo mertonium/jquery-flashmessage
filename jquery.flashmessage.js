@@ -2,14 +2,14 @@
   $.flashmessage = function(msg, options) {
     var defaults = {
       container: 'body',
-      id: 'flashmessage',
+      className: 'flashmessage',
       timeToFade: 3000,
       type: 'notification'
     };
 
     var options = $.extend(defaults, options);
 
-    var $msgBox = $('<div id="'+options.id+'"><div class="flash-wrapper '+options.type+'">'+msg+'</div></div>').css({
+    var $msgBox = $('<div class="'+options.className+'"><div class="flash-wrapper '+options.type+'">'+msg+'</div></div>').css({
       position: 'fixed',
       width: '100%',
     }).hide();

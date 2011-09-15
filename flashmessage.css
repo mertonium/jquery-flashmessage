@@ -1,6 +1,12 @@
-#flashmessage {
+.flashmessage {
   z-index: 501;
 }
+
+.flashmessage a {
+  text-decoration: underline;
+  color: #FFFFFF;
+}
+
 .flash-wrapper {
   padding: 10px;
   color: #ffffff;
@@ -10,14 +16,9 @@
   font-size: 1em;
 }
 
-#flashmessage a {
-  text-decoration: underline;
-  color: #FFFFFF;
-}
 .flash-wrapper.notification {
   border: 2px solid #0060c0;
   background-color: #0982e2;
-  font-size: 1em;
 }
 .flash-wrapper.error {
   border: 2px solid #b31900;

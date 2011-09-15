@@ -16,12 +16,12 @@ Make sure you include the plugin on your web page:
 
 **The options:** $.flashmessage() accepts two parameters, the message, and an options object which can be used to override the default behavior.
 
-    $.flashmessage(the_message,
+    $.flashmessage(the_message,       // the_message can be any string (even HTML)
       {
-        type: 'notification',   // The type of notification. This values will become a CSS class on the message (so that different types messages can be styled differently).
-        container: 'body',      // The message will be prepended into this element. The value can be either a jQuery selector, or a jQuery element.
-        id: 'flashmessage',     //
-        timeToFade: 3000
+        type: 'notification',         // The type of notification. This values will become a CSS class on the message (so that different types messages can be styled differently).
+        container: 'body',            // The message will be prepended into this element. The value can be either a jQuery selector, or a jQuery element.
+        className: 'flashmessage',    // CSS class name for the main message element
+        timeToFade: 3000              // The time (in ms) that a message should be displayed.
       }
     );
 
