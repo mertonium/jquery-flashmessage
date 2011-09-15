@@ -1,7 +1,7 @@
 (function($) {
   $.flashmessage = function(msg, options) {
     var defaults = {
-      target: 'body',
+      container: 'body',
       id: 'flashmessage',
       timeToFade: 3000,
       type: 'notification'
@@ -13,9 +13,9 @@
       position: 'fixed',
       width: '100%',
     }).hide();
-    $target = (typeof options.target == 'string') ? $(options.target) : options.target;
+    $container = (typeof options.container == 'string') ? $(options.container) : options.container;
     
-    $target.prepend($msgBox);
+    $container.prepend($msgBox);
     
     $msgBox.fadeIn().addClass('open-message').delay(options.timeToFade).fadeOut(function(){ $msgBox.remove(); });
     

@@ -1,0 +1,85 @@
+<!doctype html> 
+<html> 
+  <head> 
+    <title>Flashmessage examples page</title> 
+      <link rel="stylesheet" href="flashmessage.css" type="text/css" media="screen" charset="utf-8">
+      <script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="jquery.flashmessage.js"></script>
+      <script>
+        $(document).ready(function() {
+          $('a').click(function(ev) {
+            ev.preventDefault();
+            var target = $(ev.target).attr('id');
+            var htmlMessage;
+            
+            switch(target) {
+              case "notification_test":
+                $.flashmessage('Keep calm and carry on.');
+                break;
+              case "success_test":
+                $.flashmessage('Yay! It worked :)', { type: 'success'} );
+                break;
+              case "error_test":
+                $.flashmessage('Oh bollucks. Something didn\'t work.', { type: 'error'} );
+                break;
+              case "custom_test_1":
+                $.flashmessage("I'm against picketing, but I don't know how to show it.", { type: 'mitch', timeToFade: 4000 } );
+                break;
+              case "custom_test_2":
+                htmlMessage = '<em>We\'ll dance like hypnotized chickens.</em><br /><img src="http://www.nndb.com/people/520/000024448/iggy-face.jpg" />';
+                $.flashmessage(htmlMessage, { type: 'iggy', timeToFade: 5000 });
+                break;
+            }
+          });
+        });
+      </script>
+      
+      <style>
+        body { font-family: helvetica, arial, sans-serif; font-size: 100%; }
+        
+        .flash-wrapper.mitch {
+          border: 1px solid #eeeeee;
+          background-image: url(carpet.jpg);
+          font-size: 2.5em;
+          padding: 25px;
+          color: #FFF;
+          text-align: center;
+        }
+        .flash-wrapper.iggy {
+          border: 1px solid #eeeeee;
+          background: #000000;
+          font-size: 2.5em;
+          padding: 25px;
+          color: #FFF;
+          text-align: center;
+        }
+      </style>
+  </head> 
+  <body>
+    <h1>Flashmessage Examples</h1>
+    <h2>Default styles</h2>
+    <ul>
+      <li>type:&quot;notification&quot; (default) <a href="#" id="notification_test">demo</a></li>
+      <li>type:&quot;success&quot; <a href="#" id="success_test">demo</a></li>
+      <li>type:&quot;error&quot; <a href="#" id="error_test">demo</a></li>
+    </ul>
+    <h2>Custom style</h2>
+    <ul>
+      <li>
+        <div>Make our own &quot;mitch&quot; type. We just need to have CSS target &quot;.mitch&quot;. <a href="#" id="custom_test_1">demo</a></div>
+        <code>
+          $.flashmessage("I'm against picketing, but I don't know how to show it.", { type: 'mitch', timeToFade: 4000 } );
+        </code>
+      </li>
+      <li>
+        <div>Just pass a string of HTML. <a href="#" id="custom_test_2">demo</a></div>
+        <code>
+          var htmlMessage = <br />
+          '&lt;em&gt;We\&#x27;ll dance like hypnotized chickens.&lt;/em&gt;&lt;br /&gt;&lt;img src=&quot;http://www.nndb.com/people/520/000024448/iggy-face.jpg&quot; /&gt;';
+          <br />
+          $.flashmessage(htmlMessage, { type: 'iggy', timeToFade: 5000 });
+        </code>
+      </li>
+    </ul>
+  </body>
+</html>
