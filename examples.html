@@ -1,7 +1,7 @@
-<!doctype html> 
-<html> 
-  <head> 
-    <title>Flashmessage examples page</title> 
+<!doctype html>
+<html>
+  <head>
+    <title>Flashmessage examples page</title>
       <link rel="stylesheet" href="flashmessage.css" type="text/css" media="screen" charset="utf-8">
       <script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
       <script type="text/javascript" charset="utf-8" src="jquery.flashmessage.js"></script>
@@ -11,7 +11,7 @@
             ev.preventDefault();
             var target = $(ev.target).attr('id');
             var htmlMessage;
-            
+
             switch(target) {
               case "notification_test":
                 $.flashmessage('Keep calm and carry on.');
@@ -33,10 +33,10 @@
           });
         });
       </script>
-      
+
       <style>
         body { font-family: helvetica, arial, sans-serif; font-size: 100%; }
-        
+
         .flash-wrapper.mitch {
           border: 1px solid #eeeeee;
           background-image: url(carpet.jpg);
@@ -54,7 +54,7 @@
           text-align: center;
         }
       </style>
-  </head> 
+  </head>
   <body>
     <h1>Flashmessage Examples</h1>
     <h2>Default styles</h2>

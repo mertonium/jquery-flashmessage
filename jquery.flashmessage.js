@@ -14,11 +14,11 @@
       width: '100%',
     }).hide();
     $container = (typeof options.container == 'string') ? $(options.container) : options.container;
-    
+
     $container.prepend($msgBox);
-    
+
     $msgBox.fadeIn().addClass('open-message').delay(options.timeToFade).fadeOut(function(){ $msgBox.remove(); });
-    
+
     return true;
   };
 })(jQuery);

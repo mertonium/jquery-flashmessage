@@ -19,8 +19,8 @@ Make sure you include the plugin on your web page:
     $.flashmessage(the_message,
       {
         type: 'notification',   // The type of notification. This values will become a CSS class on the message (so that different types messages can be styled differently).
-        target: 'body',         // The 
-        id: 'flashmessage',
+        container: 'body',      // The message will be prepended into this element. The value can be either a jQuery selector, or a jQuery element.
+        id: 'flashmessage',     //
         timeToFade: 3000
       }
     );
