@@ -25,6 +25,29 @@ Make sure you include the plugin on your web page:
       }
     );
 
+**Rails View Display**
+
+In Hamlz:
+
+    -if flash[:notice]
+      %script{:type => "text/javascript"}
+        ="$(document).ready(function() {$.flashmessage('#{flash[:notice]}', { type: 'success'} );});"  
+    -elsif flash[:alert]
+      %script{:type => "text/javascript"}
+        ="$(document).ready(function() {$.flashmessage('#{flash[:alert]}', { type: 'error'} );});" 
+
+In ERBz:
+
+    <%if flash[:notice]%>
+      <script type="text/javascript">
+        $(document).ready(function() {$.flashmessage('<%=flash[:notice]%>', { type: 'success'} );});  
+      </script>    
+    <%elsif flash[:alert]%>
+      <script type="text/javascript">
+        $(document).ready(function() {$.flashmessage('<%=flash[:alert]%>, { type: 'error'} );});
+      </script>
+    <%end%>
+
 **The License:**
 
 Copyright (c) 2011 John M Mertens
