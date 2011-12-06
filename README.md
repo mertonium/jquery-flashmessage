@@ -38,13 +38,25 @@ In Hamlz:
 
 In ERBz:
 
+Method 1:
+
+		<script type="text/javascript">
+			<% if flash.present? %>
+				<% flash.each do |severity, message| %>
+		  		$(function() {$.flashmessage('<%= message %>', { type: "<%= severity %>", className: 'flashmessage wizard'} );});  
+				<% end %>
+			<% end %>
+		</script>
+
+Method 2:
+
     <%if flash[:notice]%>
       <script type="text/javascript">
         $(document).ready(function() {$.flashmessage('<%=flash[:notice]%>', { type: 'success'} );});  
       </script>    
     <%elsif flash[:alert]%>
       <script type="text/javascript">
-        $(document).ready(function() {$.flashmessage('<%=flash[:alert]%>, { type: 'error'} );});
+        $(document).ready(function() {$.flashmessage('<%=flash[:alert]%>', { type: 'error'} );});
       </script>
     <%end%>
 
